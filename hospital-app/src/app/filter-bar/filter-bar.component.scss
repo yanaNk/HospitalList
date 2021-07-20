@@ -1,0 +1,14 @@
+div{
+    mat-select{
+        width: 10rem;
+    }
+    display: flex;
+    flex-direction: row-reverse;
+    .sort{
+        font-size: 25px;
+        float: right;
+    }
+    input{
+        width:10rem !important;
+    }
+}

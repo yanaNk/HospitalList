@@ -1,0 +1,16 @@
+<mat-drawer-container>
+<mat-drawer-content *ngIf="data">
+    <app-virtual-scroll 
+    [items]="data"
+    [allItemsIds]="['123']"
+    [currentItemsIds]="['123']"
+    [itemSize]="20"
+    [scrolledItemTemplate]="patientTemplate"
+    (scrolledToEnd)="fetchData($event)"></app-virtual-scroll>
+</mat-drawer-content>
+</mat-drawer-container>
+
+
+<ng-template #patientTemplate let-item>
+    <app-patient-card [patient]="item"></app-patient-card>
+</ng-template>

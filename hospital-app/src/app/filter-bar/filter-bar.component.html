@@ -1,0 +1,41 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label
+      >sort by...<mat-icon class="sort" color="primary"
+        >sort</mat-icon
+      ></mat-label
+    >
+    <mat-select
+      color="accent"
+      name="orderBy"
+      id="orderBy"
+      [(ngModel)]="userParams.orderBy"
+    >
+      <mat-option
+        #option
+        *ngFor="let sortOption of sortByOptions"
+        [value]="sortOption"
+        (click)="sendData()"
+        >{{ sortOption }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+  
+    <input matInput placeholder="Max Age"
+      type="number"
+      style="width: 70px"
+      id="maxAge"
+      name="maxAge"
+      [(ngModel)]="userParams.maxAge"
+    />
+    <input matInput placeholder="Max acceptedOffers"
+      type="number"
+      style="width: 70px"
+      id="maxAcceptedOffers"
+      name="maxAcceptedOffers"
+      [(ngModel)]="userParams.maxAcceptedOffers"
+    />
+
+    <button mat-raised-button type="submit" (click)="sendData()">Apply Filters</button>
+ 
+</div>
