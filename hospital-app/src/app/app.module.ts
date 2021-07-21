@@ -1,3 +1,4 @@
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PatientsEffetcs } from './../root-store/patients-store/patients.effects';
 import { environment } from './../environments/environment.prod';
 import { StoreModule } from '@ngrx/store';
@@ -41,7 +42,7 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot({}),
     !environment.production ? StoreDevtoolsModule.instrument(): [],
     EffectsModule.forRoot([PatientsEffetcs]),
-    VirtualScrollModule,
+    ScrollingModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,

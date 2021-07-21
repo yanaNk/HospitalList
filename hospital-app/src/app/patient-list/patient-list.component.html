@@ -1,17 +1,19 @@
-<mat-drawer-container *ngIf="allIds$ | async as ids">
-<mat-drawer-content >
-    <app-virtual-scroll 
+<div >
+    <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
+      <app-patient-card
+        [patient]="item"
+        *cdkVirtualFor="let item of data"
+      ></app-patient-card>
+    </cdk-virtual-scroll-viewport>
+    <!-- <app-virtual-scroll 
     [items]="data"
     [allItemsIds]="ids"
     [currentItemsIds]="ids"
     [itemSize]="20"
     [scrolledItemTemplate]="patientTemplate"
     [isLoading]="false"
-    (scrolledToEnd)="fetchData($event)"></app-virtual-scroll>
-</mat-drawer-content>
-</mat-drawer-container>
+    (scrolledToEnd)="fetchData($event)"></app-virtual-scroll> -->
+ 
+</div>
 
-
-<ng-template #patientTemplate let-item>
-    <app-patient-card [patient]="item"></app-patient-card>
-</ng-template>
+<ng-template #patientTemplate let-item> </ng-template>

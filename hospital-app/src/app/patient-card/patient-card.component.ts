@@ -11,6 +11,7 @@ export class PatientCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.patient);
   }
 
 }

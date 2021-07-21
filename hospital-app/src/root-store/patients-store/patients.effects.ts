@@ -26,9 +26,9 @@ export class PatientsEffetcs {
     )
   );
 
-  getPatientDataEffect$ = createEffect(() =>
-  this.actions$.pipe(ofType(getPatientsDataAction),
-  switchMap(({ids,offset,limit}) =>
-  this.dataLoaderService.getPart(ids,offset,limit)
-  .pipe(map((data:Patient[] => getPatientsDataSuccessAction({data})))))))
+  // getPatientDataEffect$ = createEffect(() =>
+  // this.actions$.pipe(ofType(getPatientsDataAction),
+  // switchMap(({ids,offset,limit}) =>
+  // this.dataLoaderService.getPart(ids,offset,limit)
+  // .pipe(map((data:Patient[] => getPatientsDataSuccessAction({data})))))))
 }
