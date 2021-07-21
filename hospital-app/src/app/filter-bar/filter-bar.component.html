@@ -1,3 +1,14 @@
+<form [formGroup]="searchForm"
+  (ngSubmit) = "sendData()">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>maxAge</mat-label>
+      <input formControlName="age"
+      matInput
+      type="number">
+    </mat-form-field>
+  </div>
+</form>
 <div>
   <mat-form-field appearance="fill">
     <mat-label

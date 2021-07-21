@@ -1,3 +1,7 @@
+import { PatientsEffetcs } from './../root-store/patients-store/patients.effects';
+import { environment } from './../environments/environment.prod';
+import { StoreModule } from '@ngrx/store';
+import { RootStoreModule } from './../root-store/patients-store/root-store.module';
 import { VirtualScrollModule } from './virtual-scroll/virtualScrollModule';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,8 +17,11 @@ import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientListComponent } from './patient-list/patient-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { PatientsAllComponent } from './patients-all/patients-all.component';
+import { EffectsModule } from '@ngrx/effects';
 
 
 @NgModule({
@@ -23,14 +30,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FilterBarComponent,
     PatientCardComponent,
     PatientListComponent,
+    PatientsAllComponent,
     
   ],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    RootStoreModule,
+    StoreModule.forRoot({}),
+    !environment.production ? StoreDevtoolsModule.instrument(): [],
+    EffectsModule.forRoot([PatientsEffetcs]),
     VirtualScrollModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatCardModule,
     MatIconModule,

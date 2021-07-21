@@ -1,11 +1,12 @@
-<mat-drawer-container>
-<mat-drawer-content *ngIf="data">
+<mat-drawer-container *ngIf="allIds$ | async as ids">
+<mat-drawer-content >
     <app-virtual-scroll 
     [items]="data"
-    [allItemsIds]="['123']"
-    [currentItemsIds]="['123']"
+    [allItemsIds]="ids"
+    [currentItemsIds]="ids"
     [itemSize]="20"
     [scrolledItemTemplate]="patientTemplate"
+    [isLoading]="false"
     (scrolledToEnd)="fetchData($event)"></app-virtual-scroll>
 </mat-drawer-content>
 </mat-drawer-container>
