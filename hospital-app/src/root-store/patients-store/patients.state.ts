@@ -12,6 +12,6 @@ export const adapter: EntityAdapter<Patient> = createEntityAdapter<Patient>();
 export const initialPatientsDataState: PatientState = adapter.getInitialState({
     isLoading: false,
     error:"",
-    userParams:{maxAge:-1,sortBy:"",maxAverageDelay:-1,maxAcceptedOrders:-1,maxCanceledOffers:-1,name:""}
+    userParams:{age:-1,sortBy:"",averageReplyTime:-1,acceptedOffers:-1,canceledOffers:-1,name:""}
     
 });

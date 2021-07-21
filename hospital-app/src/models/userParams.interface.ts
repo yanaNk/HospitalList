@@ -1,9 +1,9 @@
 export interface UserParams {
     sortBy: string;
-    maxAge:number;
-    maxAcceptedOrders:number;
-    maxCanceledOffers: number;
-    maxAverageDelay: number;
+    age:number;
+    acceptedOffers:number;
+    canceledOffers: number;
+    averageReplyTime: number;
     name:string;
 
 }

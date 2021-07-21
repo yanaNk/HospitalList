@@ -15,32 +15,33 @@ import { Store } from '@ngrx/store';
 export class FilterBarComponent implements OnInit {
   sortByOptions: string[] = [
     'age',
-    'acceptedOrders',
-    'canceledOrders',
-    'averageDelay',
+    'acceptedOffers',
+    'canceledOffers',
+    'averageReplyTime',
   ];
   @Output() startSearch = new EventEmitter<any>();
   searchForm: FormGroup;
   userParams: UserParams | undefined;
+  selectedSort: string | undefined;
   constructor(fb: FormBuilder, private store: Store) {
     this.searchForm = fb.group({
       age: [],
-      acceptedOrders: [],
-      canceledOrders: [],
-      averageDelay: [],
+      acceptedOffers: [],
+      canceledOffers: [],
+      averageReplyTime: [],
       name: [],
-      orderBy:[]
+      sortBy: [],
     });
   }
 
   ngOnInit(): void {}
   search() {
     let userParams: UserParams = {
-      maxAge: this.searchForm.get('age')?.value,
+      age: this.searchForm.get('age')?.value,
       sortBy: this.searchForm.get('sortBy')?.value,
-      maxAcceptedOrders: this.searchForm.get('acceptedOrders')?.value,
-      maxCanceledOffers: this.searchForm.get('canceledOrders')?.value,
-      maxAverageDelay: this.searchForm.get('averageDelay')?.value,
+      acceptedOffers: this.searchForm.get('acceptedOffers')?.value,
+      canceledOffers: this.searchForm.get('canceledOffers')?.value,
+      averageReplyTime: this.searchForm.get('averageReplyTime')?.value,
       name: this.searchForm.get('name')?.value,
     };
     this.store.dispatch(setUserParamsAction({ userParams }));

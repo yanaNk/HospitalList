@@ -1,5 +1,23 @@
 <form [formGroup]="searchForm" (ngSubmit)="search()">
   <div>
+    <mat-form-field appearance="fill">
+      <mat-label
+        >sort by...<mat-icon class="sort" color="primary"
+          >sort</mat-icon
+        ></mat-label
+      >
+      <mat-select formControlName="sortBy" [(value)]="selectedSort" id="sortBy" type="string">
+        <mat-option
+          #option
+          *ngFor="let sortOption of sortByOptions"
+          [value]="sortOption" name="sortBy"
+          (click)="search()"
+          >{{ sortOption }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
     <mat-form-field appearance="outline">
       <mat-label>name</mat-label>
       <input formControlName="name" matInput type="string" />
@@ -7,8 +25,8 @@
   </div>
   <div>
     <mat-form-field appearance="outline">
-      <mat-label>maxAverageDelay</mat-label>
-      <input formControlName="averageDelay" matInput type="number" />
+      <mat-label>maxAverageReplyTime</mat-label>
+      <input formControlName="averageReplyTime" matInput type="number" />
     </mat-form-field>
   </div>
   <div>
@@ -19,34 +37,17 @@
   </div>
   <div>
     <mat-form-field appearance="outline">
-      <mat-label>maxCanceledOrders</mat-label>
-      <input formControlName="canceledOrders" matInput type="number" />
+      <mat-label>maxCanceledOffers</mat-label>
+      <input formControlName="canceledOffers" matInput type="number" />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="outline">
-      <mat-label>maxAcceptedOrders</mat-label>
-      <input formControlName="acceptedOrders" matInput type="number" />
+      <mat-label>maxAcceptedOffers</mat-label>
+      <input formControlName="acceptedOffers" matInput type="number" />
     </mat-form-field>
   </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label
-        >sort by...<mat-icon class="sort" color="primary"
-          >sort</mat-icon
-        ></mat-label
-      >
-      <mat-select color="accent" name="orderBy" id="orderBy">
-        <mat-option
-          #option
-          *ngFor="let sortOption of sortByOptions"
-          [value]="sortOption"
-          (click)="search()"
-          >{{ sortOption }}</mat-option
-        >
-      </mat-select>
-    </mat-form-field>
-  </div>
+
   <div class="search-button">
     <button
       color="primary"
