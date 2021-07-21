@@ -1,7 +1,6 @@
 import { orderBy } from 'lodash';
 import { setUserParamsAction } from './../../root-store/patients-store/patients.actions';
 import { UserParams } from './../../models/userParams.interface';
-import { DataLoaderService } from './../data-loader.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';

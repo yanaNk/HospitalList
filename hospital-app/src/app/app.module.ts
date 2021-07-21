@@ -1,9 +1,7 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { PatientsEffetcs } from './../root-store/patients-store/patients.effects';
 import { environment } from './../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { RootStoreModule } from './../root-store/patients-store/root-store.module';
-import { VirtualScrollModule } from './virtual-scroll/virtualScrollModule';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +19,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { PatientsAllComponent } from './patients-all/patients-all.component';
+import { PatientsComponent } from './patients/patients.component';
 import { EffectsModule } from '@ngrx/effects';
 
 
@@ -31,7 +29,7 @@ import { EffectsModule } from '@ngrx/effects';
     FilterBarComponent,
     PatientCardComponent,
     PatientListComponent,
-    PatientsAllComponent,
+    PatientsComponent,
     
   ],
   imports: [
