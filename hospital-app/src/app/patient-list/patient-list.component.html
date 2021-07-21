@@ -1,4 +1,5 @@
 <div class="patients-list">
+  <h2 *ngIf="data.length == 0">There are no results.</h2>
   <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
     <app-patient-card
       [patient]="item"
