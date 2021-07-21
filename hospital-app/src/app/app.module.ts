@@ -12,6 +12,8 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -49,7 +51,9 @@ import { EffectsModule } from '@ngrx/effects';
     MatSidenavModule,
     MatButtonModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule,
+    MatProgressBarModule
 
   ],
   providers: [],

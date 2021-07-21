@@ -1,19 +1,25 @@
-div{
-    .sort{
-        font-size: 25px;
-        float: left;
-    }
-    input,mat-select{
-        width:10rem ;
-    }
+div {
+  .sort {
+    font-size: 25px;
+    float: left;
+  }
+  input,
+  mat-select {
+    width: 10rem;
+  }
 }
-.search-button{
-    width:5vw;
-    justify-content: center;
+.search-button {
+  width: 5vw;
 }
-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap:0.2rem;
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.01rem;
+}
+mat-form-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

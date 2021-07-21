@@ -1,8 +1,50 @@
 mat-card {
-    height: 200px;
-    width:50%;
-    justify-content: center;
+  height: 200px;
+  width: 40%;
+  justify-content: center;
+  background: rgba(210, 164, 233, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  mat-card-title {
+    font-style: italic;
+  }
+  mat-card-content,div{
+      text-align: left;
+      margin-bottom: 5px;
+  }
+  mat-icon {
+    font-size: 15px !important;
+  }
 }
 ::ng-deep.mat-card-header-text {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+mat-progress-bar {
+  width: 50%;
+}
+::ng-deep .mat-progress-bar-fill::after,
+.accepted {
+  background-color: #1a964d !important;
+}
+::ng-deep .mat-progress-bar-fill::after,
+.canceled {
+  background-color: #961a2f !important;
+}
+mat-label {
+  font-weight: 300;
+  font-style: oblique;
+  font-size: medium;
+}
+span{
+    margin-bottom: 15px;
+}
+.green-icon {
+    color: green;
+}
+.red-icon{
+    color:red;
+}
