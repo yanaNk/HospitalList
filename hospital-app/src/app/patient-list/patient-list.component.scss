@@ -1,12 +1,11 @@
-app-patient-card{
-  width:100%;
+app-patient-card {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
 
 cdk-virtual-scroll-viewport {
- 
   height: 100vh;
   &::-webkit-scrollbar {
     width: 1em;

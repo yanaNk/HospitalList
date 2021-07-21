@@ -11,9 +11,10 @@ mat-card {
   mat-card-title {
     font-style: italic;
   }
-  mat-card-content,div{
-      text-align: left;
-      margin-bottom: 5px;
+  mat-card-content,
+  div {
+    text-align: left;
+    margin-bottom: 5px;
   }
   mat-icon {
     font-size: 15px !important;
@@ -26,25 +27,17 @@ mat-card {
 mat-progress-bar {
   width: 50%;
 }
-::ng-deep .mat-progress-bar-fill::after,
-.accepted {
-  background-color: #1a964d !important;
-}
-::ng-deep .mat-progress-bar-fill::after,
-.canceled {
-  background-color: #961a2f !important;
-}
+
 mat-label {
-  font-weight: 300;
   font-style: oblique;
   font-size: medium;
 }
-span{
-    margin-bottom: 15px;
+span {
+  margin-bottom: 15px;
 }
 .green-icon {
-    color: green;
+  color: green;
 }
-.red-icon{
-    color:red;
+.red-icon {
+  color: red;
 }

@@ -1,4 +1,3 @@
-import { UserParams } from './../models/userParams.interface';
 import { Component } from '@angular/core';
 
 @Component({

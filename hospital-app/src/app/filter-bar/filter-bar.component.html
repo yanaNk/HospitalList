@@ -6,11 +6,17 @@
           >sort</mat-icon
         ></mat-label
       >
-      <mat-select formControlName="sortBy" [(value)]="selectedSort" id="sortBy" type="string">
+      <mat-select
+        formControlName="sortBy"
+        [(value)]="selectedSort"
+        id="sortBy"
+        type="string"
+      >
         <mat-option
           #option
           *ngFor="let sortOption of sortByOptions"
-          [value]="sortOption" name="sortBy"
+          [value]="sortOption"
+          name="sortBy"
           (click)="search()"
           >{{ sortOption }}</mat-option
         >
@@ -52,6 +58,7 @@
     <button
       color="primary"
       type="submit"
+      (keyup.enter)="search()"
       [disabled]="!searchForm.valid"
       mat-raised-button
     >

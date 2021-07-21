@@ -1,6 +1,6 @@
 <mat-card class="patient-card">
   <mat-card-header color="primary">
-    <div mat-card-avatar class="example-header-image"></div>
+    <div mat-card-avatar></div>
     <mat-card-title>{{ patient?.name }} </mat-card-title>
     <mat-card-subtitle>Details <mat-icon>info</mat-icon></mat-card-subtitle>
   </mat-card-header>
@@ -19,19 +19,23 @@
       </span>
     </div>
     <div>
-      <mat-label>acceptedOffers:<mat-icon class="green-icon">checked</mat-icon></mat-label>
+      <mat-label
+        >acceptedOffers:<mat-icon class="green-icon"
+          >checked</mat-icon
+        ></mat-label
+      >
       <span>{{ patient?.acceptedOffers }}</span>
       <mat-progress-bar
-        class="accepted"
         mode="determinate"
         value="{{ patient?.acceptedOffers }}"
       ></mat-progress-bar>
     </div>
     <div>
-      <mat-label>canceledOffers:<mat-icon class="red-icon">close </mat-icon></mat-label>
+      <mat-label
+        >canceledOffers:<mat-icon class="red-icon">close </mat-icon></mat-label
+      >
       <span>{{ patient?.canceledOffers }}</span>
       <mat-progress-bar
-        class="canceled"
         mode="determinate"
         value="{{ patient?.canceledOffers }}"
       ></mat-progress-bar>
