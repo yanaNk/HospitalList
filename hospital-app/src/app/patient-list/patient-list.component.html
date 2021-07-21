@@ -5,15 +5,6 @@
         *cdkVirtualFor="let item of data"
       ></app-patient-card>
     </cdk-virtual-scroll-viewport>
-    <!-- <app-virtual-scroll 
-    [items]="data"
-    [allItemsIds]="ids"
-    [currentItemsIds]="ids"
-    [itemSize]="20"
-    [scrolledItemTemplate]="patientTemplate"
-    [isLoading]="false"
-    (scrolledToEnd)="fetchData($event)"></app-virtual-scroll> -->
- 
 </div>
 
 <ng-template #patientTemplate let-item> </ng-template>

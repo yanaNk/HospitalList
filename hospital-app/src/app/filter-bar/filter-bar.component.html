@@ -1,52 +1,60 @@
-<form [formGroup]="searchForm"
-  (ngSubmit) = "sendData()">
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>name</mat-label>
+      <input formControlName="name" matInput type="string" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>maxAverageDelay</mat-label>
+      <input formControlName="averageDelay" matInput type="number" />
+    </mat-form-field>
+  </div>
   <div>
     <mat-form-field appearance="outline">
       <mat-label>maxAge</mat-label>
-      <input formControlName="age"
-      matInput
-      type="number">
+      <input formControlName="age" matInput type="number" />
     </mat-form-field>
   </div>
-</form>
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label
-      >sort by...<mat-icon class="sort" color="primary"
-        >sort</mat-icon
-      ></mat-label
-    >
-    <mat-select
-      color="accent"
-      name="orderBy"
-      id="orderBy"
-      [(ngModel)]="userParams.orderBy"
-    >
-      <mat-option
-        #option
-        *ngFor="let sortOption of sortByOptions"
-        [value]="sortOption"
-        (click)="sendData()"
-        >{{ sortOption }}</mat-option
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>maxCanceledOrders</mat-label>
+      <input formControlName="canceledOrders" matInput type="number" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>maxAcceptedOrders</mat-label>
+      <input formControlName="acceptedOrders" matInput type="number" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label
+        >sort by...<mat-icon class="sort" color="primary"
+          >sort</mat-icon
+        ></mat-label
       >
-    </mat-select>
-  </mat-form-field>
-  
-    <input matInput placeholder="Max Age"
-      type="number"
-      style="width: 70px"
-      id="maxAge"
-      name="maxAge"
-      [(ngModel)]="userParams.maxAge"
-    />
-    <input matInput placeholder="Max acceptedOffers"
-      type="number"
-      style="width: 70px"
-      id="maxAcceptedOffers"
-      name="maxAcceptedOffers"
-      [(ngModel)]="userParams.maxAcceptedOffers"
-    />
-
-    <button mat-raised-button type="submit" (click)="sendData()">Apply Filters</button>
- 
-</div>
+      <mat-select color="accent" name="orderBy" id="orderBy">
+        <mat-option
+          #option
+          *ngFor="let sortOption of sortByOptions"
+          [value]="sortOption"
+          (click)="search()"
+          >{{ sortOption }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="search-button">
+    <button
+      color="primary"
+      type="submit"
+      [disabled]="!searchForm.valid"
+      mat-raised-button
+    >
+      <span>search</span>
+    </button>
+  </div>
+</form>

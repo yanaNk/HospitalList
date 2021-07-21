@@ -16,6 +16,11 @@ export const loadSearchStateAction = createAction(
     props<{ searchArgs: UserParams}>(),
 );
 
+export const setUserParamsAction = createAction(
+    '[Patients search component] search by params',
+    props<{userParams:UserParams}>()
+);
+
 export const loadAll = createAction(
     '[Patients getAll] get all',
 )
